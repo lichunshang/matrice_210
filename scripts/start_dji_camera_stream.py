@@ -18,7 +18,7 @@ def node_error_log(string):
 def subscribe_to_240p(front_right, front_left, down_front, down_back, unsubscribe):
     try:
         subs_service = rospy.ServiceProxy(srv_stereo_240p_name, Stereo240pSubscription)
-        node_error_log("Service call to 240p: front_right %d, front_left %d , down_front %d, down_back %d, unsubscribe %d" % 
+        node_log("Service call to 240p: front_right %d, front_left %d , down_front %d, down_back %d, unsubscribe %d" % 
             (front_right, front_left, down_front, down_back, unsubscribe))
         response = subs_service(front_right, front_left, down_front, down_back, unsubscribe)
     except rospy.ServiceException, e:
