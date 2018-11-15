@@ -1,0 +1,4 @@
+<launch>
+    <include file="$(find dji_sdk)/launch/sdk_nuc.launch" />
+    <node pkg="matrice_210" name="start_dji_camera_stream" type="start_dji_camera_stream.py" output="screen" args="--down-stereo"/>
+</launch>
